@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/404.css')}}">
+{% endblock %}
+{% block content %}
+    <div class="dat container">
+        <div class="row">
+            <div class="col-md">
+                <img src="{{url_for('static', filename='img/ops.png')}}" alt="sorry">
+                <h2>IT SEEMS THAT YOU ARE LOST</h2>
+               <a href="/index.html"><button class="btn btn-primary">Back Home</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

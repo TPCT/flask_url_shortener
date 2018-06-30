@@ -1,0 +1,39 @@
+        /* smart phones */
+
+        @media(max-width:800px){
+
+       }
+   
+       /* small screen */
+       .footer .copy {
+        text-align: center
+        }
+        .footer .social {
+            text-align: center
+        }
+
+        .head .top .menu, .head .top .logo {
+            text-align: center;
+        }
+   
+       @media only screen and (min-width: 768px) and (max-width: 990px){
+
+
+       }
+   
+       /* medium screen */
+   
+       @media only screen and (min-width: 992px) and (max-width: 1190px){
+               
+
+   
+       }
+   
+       /* large screen */
+   
+       @media(min-width:1200px){
+   
+           /* write media*/
+
+   
+       }

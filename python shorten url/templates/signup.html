@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/signup.css')}}">
+{% endblock %}
+{% block content %}
+    <div class="acc container">
+        <div class="row">
+            <div class="log col-md">
+                <h4>Create new account</h4>
+                <hr>
+                <form action="" method="post">
+                    {{form.hidden_tag()}}
+                    {% if error %}
+                    <center><span style="color: red"> {{error}} </span></center>
+                    {% endif %}
+                    <div class="form-group">
+                        {{form.username(class='form-control', placeholder='Username', required=True)}}
+                        {% with errors = form.username.errors %}
+                        {% if errors %}
+                        {% for error in errors %}
+                        <span style="color: red">{{error}}</span>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    <div class="form-group">
+                        {{form.password(class='form-control', placeholder='Password', required=True)}}
+                        {% with errors = form.password.errors %}
+                        {% if errors %}
+                        {% for error in errors %}
+                        <span style="color: red">{{error}}</span>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    <div class="form-group">
+                        {{form.confirm_password(class='form-control', placeholder='Confirm Password', required=True)}}
+                        {% with errors = form.confirm_password.errors %}
+                        {% if errors %}
+                        {% for error in errors %}
+                        <span style="color: red">{{error}}</span>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    <div class="form-group">
+                        {{form.email_address(class='form-control', placeholder='email', required=True)}}
+                        {% with errors = form.email_address.errors %}
+                        {% if errors %}
+                        {% for error in errors %}
+                        <span style="color: red">{{error}}</span>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    <div class="form-group">
+                        {{form.phone(class='form-control', placeholder='Phone-No (Optional)', required=False)}}
+                        {% with errors = form.phone.errors %}
+                        {% if errors %}
+                        {% for error in errors %}
+                        <span style="color: red">{{error}}</span>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    {{form.signup(class='btn btn-primary')}}
+                    <p>Go back <a href="index.html">HOME</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

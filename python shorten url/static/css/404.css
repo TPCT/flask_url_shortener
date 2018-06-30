@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded:300,500');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(../img/404-bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
+}
+.dat {
+    text-align: center;
+    justify-content: center
+}
