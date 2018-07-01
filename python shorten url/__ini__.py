@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request, make_response, session, url_for, escape, flash, abort
 from wtforms import SubmitField, PasswordField, StringField
-from wtforms.validators import DataRequired, email, url
+from wtforms.validators import DataRequired, email, Length
 from werkzeug.utils import secure_filename
 from flask_wtf import FlaskForm
 from email.mime.multipart import MIMEMultipart
@@ -326,8 +326,8 @@ class website_forms:
 
 	class Signup_Form(FlaskForm):
 		username = StringField('username', validators=[DataRequired()])
-		password = PasswordField('password', validators=[DataRequired()])
-		confirm_password = PasswordField('confirm_password', validators=[DataRequired()])
+		password = PasswordField('password', validators=[DataRequired(), Length(min=7, max=64)])
+		confirm_password = PasswordField('confirm_password', validators=[DataRequired()Length(min=7, max=64)])
 		email_address = StringField('email address', validators=[DataRequired(), email()])
 		phone = StringField('phone number')
 		signup = SubmitField('Sign Up')
@@ -544,7 +544,7 @@ if __name__ == '__main__':
 	database().database_fetched().start()
 	while not database_fetched:
 		pass
-	app.run('localhost', 5000, debug=False)
+	app.run('0.0.0.0', 80, debug=False)
 	while True:
 		if not database().file_watcher().isAlive():
 			os._exit(1)
